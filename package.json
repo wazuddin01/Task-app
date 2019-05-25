@@ -1,0 +1,27 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "Web app to manage task",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wazuddin01/Task-app.git"
+  },
+  "author": "Md wazuddin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wazuddin01/Task-app/issues"
+  },
+  "homepage": "https://github.com/wazuddin01/Task-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "mongoose": "^5.5.11",
+    "nodemon": "^1.19.1"
+  }
+}
