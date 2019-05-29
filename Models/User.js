@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   email: {
     type: String,
+    unique: true,
     trim: true,
     required: true,
     validate(value) {
@@ -28,7 +29,20 @@ const UserSchema = new Schema({
     minlength: 5
   },
   isVerified: {
-    type: Boolean
+    type: Boolean,
+    default: false
+  },
+  // tokens: [
+  //   {
+  //     token: {
+  //       type: String,
+  //       required: true
+  //     }
+  //   }
+  // ],
+  Date: {
+    type: Date,
+    default: Date.now
   }
 });
 module.exports = mongoose.model("User", UserSchema);
