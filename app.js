@@ -7,8 +7,10 @@ const app = express();
 
 const options = require("./config/keys");
 const userRoute = require("./routes/user");
+const taskRoute = require("./routes/task");
 const port = process.env.PORT || 3000;
 
+mongoose.set("useFindAndModify", false);
 //connecting to the database
 mongoose
   .connect(options.mongoUrl, { useNewUrlParser: true, useCreateIndex: true })
@@ -27,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.use("/user", userRoute);
-
+app.use("/user", taskRoute);
 app.listen(port, () => {
   console.log(`App is Running at ${port}`);
 });
