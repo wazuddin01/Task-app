@@ -1,49 +1,47 @@
-<div class="back">
-  <div class="container">
-    <div class="col-sm-9 col-xs-6 col-md-6 col-lg-5 mx-auto">
-      <div class="card card-signin">
-        <div class="card-body">
-          <h5 class="card-title text-center">Sign In</h5>
-          <form class="form-signin">
-            <div class="form-group">
-              <input
-                type="email"
-                class="form-control"
-                placeholder="Email address"
-                required
-                autofocus
-              />
-            </div>
+<body>
+  <!-- main -->
+  <div class="main-w3layouts wrapper">
+    <h1>Login</h1>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form action="#" method="post">
+          <input
+            class="text email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required=""
+          />
+          <input
+            class="text"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+          />
 
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Password"
-                required
-              />
-            </div>
-
-            <div class="custom-control custom-checkbox mb-3">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="customCheck1"
-              />
-              <label>Forget password ?</label>
-            </div>
-            <button
-              class="btn btn-lg btn-primary btn-block text-uppercase"
-              type="submit"
-            >
-              Sign in
-            </button>
-            <!-- <hr class="my-4" /> -->
-            <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
-          </form>
-        </div>
+          <div class="wthree-text m-1">
+            <label class="anim">
+              <span>Forget Password ?</span>
+            </label>
+            <div class="clear"></div>
+          </div>
+          <input type="submit" value="LOGIN" />
+        </form>
+        <p>
+          Don't have an Account?
+          <a [routerLink]="['/register']"> Register Now</a>
+        </p>
       </div>
     </div>
+    <!-- copyright -->
+    <!-- <div class="colorlibcopy-agile">
+      <p>
+        © 2018 Colorlib Signup Form. All rights reserved | Design by
+        <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+      </p>
+    </div> -->
+    <!-- //copyright -->
   </div>
-</div>
+  <!-- //main -->
+</body>

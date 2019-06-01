@@ -1,3 +1,50 @@
-<p>
-  register works!
-</p>
+<body>
+  <!-- main -->
+  <div class="main-w3layouts wrapper">
+    <h1 class="mt-3">Register</h1>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form action="#" method="post">
+          <input
+            class="text email"
+            type="email"
+            name="email"
+            placeholder="Email"
+            required=""
+          />
+          <input
+            class="text email"
+            type="text"
+            name="firsName"
+            placeholder="First Name"
+            required=""
+          />
+          <input
+            class="text email"
+            type="email"
+            name="lastName"
+            placeholder="Last Name"
+            required=""
+          />
+          <input
+            class="text"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required=""
+          />
+
+          <div class="wthree-text m-1">
+            <div class="clear"></div>
+          </div>
+          <input type="submit" value="SIGNUP" />
+        </form>
+        <p>
+          Already have an Account?
+          <a [routerLink]="['/login']"> Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- //main -->
+</body>
