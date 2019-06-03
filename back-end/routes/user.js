@@ -59,8 +59,8 @@ router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email });
     const ismatched = await bycrypt.compare(password, user.password); //Password does not match
-    if (!ismatched || !user) {
-      throw new Error("Password or Email incorrect");
+    if (!ismatched ) {
+      throw new Error("Password incorrect");
     }
     //Checking user Email is Verified or not
     if (!user.isVerified) {

@@ -2,3 +2,6 @@
 /* body {
   background-color: #ff803a !important;
 } */
+* {
+  box-sizing: border-box;
+}

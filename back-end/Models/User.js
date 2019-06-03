@@ -15,18 +15,15 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    required: true,
-    minlength: 6
+    required: true
   },
   firstName: {
     type: String,
-    required: true,
-    minlength: 5
+    required: true
   },
   lastName: {
     type: String,
-    required: true,
-    minlength: 5
+    required: true
   },
   isVerified: {
     type: Boolean,

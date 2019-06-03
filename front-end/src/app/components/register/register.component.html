@@ -4,9 +4,11 @@
     <h1 class="mt-3">Register</h1>
     <div class="main-agileinfo">
       <div class="agileits-top">
-        <form action="#" method="post">
+        <form #form="ngForm" (ngSubmit)="submit(form)">
           <input
             class="text email"
+            ngModel
+            #email="ngModel"
             type="email"
             name="email"
             placeholder="Email"
@@ -14,20 +16,26 @@
           />
           <input
             class="text email"
+            ngModel
+            #firstName="ngModel"
             type="text"
-            name="firsName"
+            name="firstName"
             placeholder="First Name"
             required=""
           />
           <input
             class="text email"
-            type="email"
+            ngModel
+            #lastName="ngModel"
+            type="text"
             name="lastName"
             placeholder="Last Name"
             required=""
           />
           <input
             class="text"
+            ngModel
+            #password="ngModel"
             type="password"
             name="password"
             placeholder="Password"
@@ -37,7 +45,7 @@
           <div class="wthree-text m-1">
             <div class="clear"></div>
           </div>
-          <input type="submit" value="SIGNUP" />
+          <input [disabled]="!form.valid" type="submit" value="SIGNUP" />
         </form>
         <p>
           Already have an Account?

@@ -3,10 +3,13 @@
   <div class="main-w3layouts wrapper">
     <h1>Login</h1>
     <div class="main-agileinfo">
+      <div class="error" *ngIf="errors">{{ errors.Error }}</div>
       <div class="agileits-top">
-        <form action="#" method="post">
+        <form #form="ngForm" (ngSubmit)="submit(form)">
           <input
             class="text email"
+            ngModel
+            #email="ngModel"
             type="email"
             name="email"
             placeholder="Email"
@@ -16,6 +19,8 @@
             class="text"
             type="password"
             name="password"
+            ngModel
+            #password="ngModel"
             placeholder="Password"
             required=""
           />
@@ -26,7 +31,7 @@
             </label>
             <div class="clear"></div>
           </div>
-          <input type="submit" value="LOGIN" />
+          <input [disabled]="!form.valid" type="submit" value="LOGIN" />
         </form>
         <p>
           Don't have an Account?

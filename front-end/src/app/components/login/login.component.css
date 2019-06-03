@@ -202,14 +202,14 @@ img {
 
 /*-- end reset --*/
 body {
-  background: #76b852;
+  background: #28a745;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #76b852, #8dc26f);
   background: -moz-linear-gradient(to top, #76b852, #8dc26f);
   background: -o-linear-gradient(to top, #76b852, #8dc26f);
   background: linear-gradient(to top, #76b852, #8dc26f);
-  background-size: cover;
-  background-attachment: fixed;
+  /* background-size: cover;
+  background-attachment: fixed; */
   font-family: "Roboto", sans-serif;
 }
 
@@ -226,6 +226,7 @@ h1 {
 /*-- main --*/
 .main-w3layouts {
   padding: 3em 0 2.2em;
+  height: 100%;
 }
 
 .main-agileinfo {
@@ -303,14 +304,16 @@ input.text.w3lpass {
 :-ms-input-placeholder {
   color: #fff;
 }
-
+.error {
+  color: #fff;
+  text-align: center;
+}
 input[type="submit"] {
   font-size: 0.9em;
   color: #fff;
   background: #76b852;
   outline: none;
   border: 1px solid #76b852;
-  cursor: pointer;
   padding: 0.9em;
   -webkit-appearance: none;
   width: 100%;
