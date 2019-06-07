@@ -1,10 +1,4 @@
-/*--
-Author: Colorlib
-Author URL: https://colorlib.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/*-- reset --*/
+/* 
 body,
 div,
 span,
@@ -84,7 +78,7 @@ time,
 mark,
 audio,
 video {
-  /* margin: 0; */
+
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -131,7 +125,7 @@ table {
   border-spacing: 0;
 }
 
-/*-- start editing from here --*/
+
 a {
   text-decoration: none;
 }
@@ -140,76 +134,74 @@ a {
   text-align: right;
 }
 
-/* text align right */
 .txt-lt {
   text-align: left;
 }
 
-/* text align left */
+
 .txt-center {
   text-align: center;
 }
 
-/* text align center */
+
 .float-rt {
   float: right;
 }
 
-/* float right */
+
 .float-lt {
   float: left;
 }
 
-/* float left */
+
 .clear {
   clear: both;
 }
 
-/* clear float */
+
 .pos-relative {
   position: relative;
 }
 
-/* Position Relative */
+
 .pos-absolute {
   position: absolute;
 }
 
-/* Position Absolute */
+
 .vertical-base {
   vertical-align: baseline;
 }
 
-/* vertical align baseline */
+
 .vertical-top {
   vertical-align: top;
 }
 
-/* vertical align top */
+
 nav.vertical ul li {
   display: block;
 }
 
-/* vertical menu */
+
 nav.horizontal ul li {
   display: inline-block;
 }
 
-/* horizontal menu */
+
 img {
   max-width: 100%;
 }
 
-/*-- end reset --*/
+
 body {
   background: #28a745;
-  /* fallback for old browsers */
+
   background: -webkit-linear-gradient(to top, #76b852, #8dc26f);
   background: -moz-linear-gradient(to top, #76b852, #8dc26f);
   background: -o-linear-gradient(to top, #76b852, #8dc26f);
   background: linear-gradient(to top, #76b852, #8dc26f);
-  /* background-size: cover;
-  background-attachment: fixed; */
+
   font-family: "Roboto", sans-serif;
 }
 
@@ -223,7 +215,7 @@ h1 {
   font-family: "Roboto", sans-serif;
 }
 
-/*-- main --*/
+
 .main-w3layouts {
   padding: 3em 0 2.2em;
   height: 100%;
@@ -292,12 +284,12 @@ input.text.w3lpass {
 }
 
 :-moz-placeholder {
-  /* Firefox 18- */
+
   color: #fff;
 }
 
 ::-moz-placeholder {
-  /* Firefox 19+ */
+ 
   color: #fff;
 }
 
@@ -350,8 +342,7 @@ input[type="submit"]:hover {
   color: #76b852;
 }
 
-/*-- //main --*/
-/*-- checkbox --*/
+
 .wthree-text label {
   font-size: 0.9em;
   color: #fff;
@@ -403,18 +394,7 @@ input.checkbox:checked:after {
   border-right-color: transparent;
 }
 
-/* .anim input.checkbox:checked:after {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  height: .5rem;
-  border-color: transparent;
-  border-right-color: transparent;
-  animation: .4s rippling .4s ease;
-  animation-fill-mode: forwards;
-} */
+
 
 @keyframes rippling {
   50% {
@@ -427,8 +407,7 @@ input.checkbox:checked:after {
   }
 }
 
-/*-- //checkbox --*/
-/*-- copyright --*/
+
 .colorlibcopy-agile {
   margin: 2em 0 1em;
   text-align: center;
@@ -455,7 +434,7 @@ input.checkbox:checked:after {
   color: #000;
 }
 
-/*-- //copyright --*/
+
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -629,7 +608,6 @@ input.checkbox:checked:after {
   }
 }
 
-/*-- responsive-design --*/
 @media (max-width: 1440px) {
   input[type="text"],
   input[type="email"],
@@ -872,5 +850,116 @@ input.checkbox:checked:after {
 
   .wthree-text label {
     font-size: 0.85em;
+  }
+} */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../assets/fonts/Roboto-Light.eot");
+  src: local("Roboto Light"), local("Roboto-Light"),
+    url("../../../assets/fonts/Roboto-Lightd41d.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../assets/fonts/Roboto-Light.woff2") format("woff2"),
+    url("../../../assets/fonts/Roboto-Light.woff") format("woff"),
+    url("../../../assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../assets/fonts/Roboto-Regular.eot");
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("../../../assets/fonts/Roboto-Regulard41d.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../assets/fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../../../assets/fonts/Roboto-Regular.woff") format("woff"),
+    url("../../../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../assets/fonts/Roboto-Medium.eot");
+  src: local("Roboto Medium"), local("Roboto-Medium"),
+    url("../../../assets/fonts/Roboto-Mediumd41d.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../assets/fonts/Roboto-Medium.woff2") format("woff2"),
+    url("../../../assets/fonts/Roboto-Medium.woff") format("woff"),
+    url("../../../assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../../../assets/fonts/Roboto-Bold.eot");
+  src: local("Roboto Bold"), local("Roboto-Bold"),
+    url("../../../assets/fonts/Roboto-Boldd41d.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../../assets/fonts/Roboto-Bold.woff2") format("woff2"),
+    url("../../../assets/fonts/Roboto-Bold.woff") format("woff"),
+    url("../../../assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+body,
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  color: #253992;
+  font-weight: 100;
+  font-size: 2.8em;
+}
+p {
+  font-weight: 100;
+  color: grey;
+  line-height: 1.8em;
+}
+.grid {
+  font-family: "Roboto";
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+}
+.left {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+.padding {
+  margin-top: 8em;
+  margin-left: 5em;
+  margin-right: 1em;
+}
+input {
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.placehold {
+  font-weight: 80;
+  color: grey;
+}
+.right-item {
+  font-weight: 300;
+  text-align: right;
+  color: #253992;
+}
+.left:hover {
+  cursor: pointer;
+  color: purple;
+}
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .center {
+    text-align: center;
+  }
+  .padding {
+    margin-top: 8em;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .header {
+    margin-left: 4rem;
   }
 }
