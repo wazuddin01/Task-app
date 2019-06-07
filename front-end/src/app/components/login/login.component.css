@@ -917,18 +917,30 @@ p {
 .grid {
   font-family: "Roboto";
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 3fr;
   grid-template-rows: repeat(12, 1fr);
   height: 100%;
 }
 .left {
+  background-image: url("../../../assets/images/ath-gfx.png");
+  background-repeat: no-repeat;
+  background-position: center;
   grid-column: 1/2;
   grid-row: 1/-1;
 }
+.right {
+  background-image: url("../../../assets/images/smartphone.png"),
+    url("../../../assets/images/ath-gfx.png");
+  background-repeat: no-repeat no-repeat;
+  background-position: center;
+  grid-column: 2/4;
+  grid-row: 1/-1;
+  background-color: #0747a6;
+}
 .padding {
   margin-top: 8em;
-  margin-left: 5em;
-  margin-right: 1em;
+  margin-left: 3em;
+  margin-right: 1.5em;
 }
 input {
   border-radius: 20px;
@@ -936,20 +948,38 @@ input {
 }
 .placehold {
   font-weight: 80;
+  font-size: 14px;
+  padding: 10px;
   color: grey;
 }
 .right-item {
-  font-weight: 300;
+  /* font-weight: 300; */
+  font-size: 15px;
   text-align: right;
   color: #253992;
 }
-.left:hover {
+.right-item:hover {
   cursor: pointer;
   color: purple;
 }
-@media (max-width: 700px) {
+.under {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+}
+.over {
+  position: absolute;
+  left: 40px;
+  top: 10px;
+  z-index: -1;
+}
+@media (max-width: 670px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+  .right {
+    display: none;
   }
   .center {
     text-align: center;
