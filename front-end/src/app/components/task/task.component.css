@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: "Open Sans", serif;
   padding-top: 54px;
   color: #868e96;
@@ -126,9 +126,9 @@ section.resume-section .resume-item .resume-date {
   }
 }
 
-/* .bg-primary {
+.bg-primary {
     background-color: #bd5d38 !important;
-  } */
+  } 
 
 .text-primary {
   color: #bd5d38 !important;
@@ -141,4 +141,38 @@ a:hover,
 a:focus,
 a:active {
   color: #824027;
+} */
+html,
+body {
+  height: 100%;
+}
+.grid {
+  display: grid;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: 1.2fr 6fr;
+  height: 100%;
+}
+.side-nav {
+  height: 100%;
+  background-color: #0747a6;
+  grid-row: 1/-1;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.nav {
+  display: none;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .side-nav {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    grid-column: 1/-1;
+    background: #0747a6;
+    border: 2px solid #0747a6;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  }
 }
