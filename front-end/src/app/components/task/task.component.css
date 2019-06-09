@@ -161,6 +161,46 @@ body {
 .nav {
   display: none;
 }
+.nav-item > a {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: 400;
+}
+a:hover {
+  cursor: pointer;
+  color: bisque;
+}
+.navbar-brand {
+  color: whitesmoke;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.img-avatar {
+  display: block;
+  grid-row: 4/6;
+  border: 0.5rem solid rgba(255, 255, 255, 0.2);
+}
+.m-top {
+  margin-top: 8em;
+}
+.center {
+  text-align: center;
+  color: lightgrey;
+}
+.h5 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.h5:hover {
+  cursor: pointer;
+  color: bisque;
+}
+.img-toggle {
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  cursor: pointer;
+}
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
@@ -171,7 +211,7 @@ body {
   .nav {
     display: flex;
     grid-column: 1/-1;
-    background: #0747a6;
+    background-color: #0747a6;
     border: 2px solid #0747a6;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   }

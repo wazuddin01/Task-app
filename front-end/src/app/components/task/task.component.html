@@ -39,8 +39,52 @@
 
 </div> -->
 <div class="grid">
-  <div class="side-nav">hj</div>
-  <div class="nav">nav</div>
+  <div class="side-nav">
+    <div class="m-top">
+      <img
+        class="img-responsive img-avatar
+        img-fluid img-profile rounded-circle mx-auto mb-3"
+        src="../../../assets/images/boy.png"
+        alt=""
+      />
+      <div class="center">
+        <h5 class="h5 ">TASKS</h5>
+        <h5 class="h5">LOGOUT</h5>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar up-nav navbar-expand-md nav">
+    <a [routerLink]="['/task']" class="navbar-brand">Task App</a>
+    <!-- <button
+    style="background-color: whitesmoke;"
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#navBarMenu"
+    >
+      <span class="navbar-toggler-icon"></span></button> -->
+    <img
+      class="navbar-toggler img-toggle"
+      data-toggle="collapse"
+      data-target="#navBarMenu"
+      src="../../../assets/images/icons8-pull-down-48.png"
+      alt=""
+    />
+
+    <div class="collapse navbar-collapse" id="navBarMenu">
+      <ul class="navbar-nav mr-auto">
+        <li [routerLink]="['/task']" class="nav-item">
+          <a class="nav-link">Tasks</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a (click)="logout()"  class="nav-link"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div>
     hkhjkhsdfjk
   </div>
