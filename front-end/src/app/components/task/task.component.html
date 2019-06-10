@@ -38,7 +38,9 @@
   </nav>
 
 </div> -->
-<div class="grid">
+<!--****** USING CSS GRID ******-->
+
+<!-- <div class="grid">
   <div class="side-nav">
     <div class="m-top">
       <img
@@ -55,13 +57,14 @@
   </div>
   <nav class="navbar up-nav navbar-expand-md nav">
     <a [routerLink]="['/task']" class="navbar-brand">Task App</a>
-    <!-- <button
-    style="background-color: whitesmoke;"
-    class="navbar-toggler"
-    data-toggle="collapse"
-    data-target="#navBarMenu"
+    <button
+      style="background-color: whitesmoke;"
+      class="navbar-toggler"
+      data-toggle="collapse"
+      data-target="#navBarMenu"
     >
-      <span class="navbar-toggler-icon"></span></button> -->
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <img
       class="navbar-toggler img-toggle"
       data-toggle="collapse"
@@ -78,14 +81,62 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a (click)="logout()"  class="nav-link"
-            >Logout</a
-          >
+          <a (click)="logout()" class="nav-link">Logout</a>
         </li>
       </ul>
     </div>
   </nav>
-  <div>
-    hkhjkhsdfjk
-  </div>
+</div> -->
+<div class="grid-container">
+  <header class="header">
+    <h6>TASK APP</h6>
+    <div class="box">
+      <h6 class="header-logout">Logout</h6>
+      <img
+        class="header-img rounded-circle"
+        src="../../../assets/images/boy_16p.png"
+        alt=""
+      />
+    </div>
+    <!-- <p style="text-align: right;">TASK APP</p> -->
+    <!-- <p>TASK APP</p> -->
+  </header>
+  <aside class="side-nav">
+    <div class="m-top">
+      <img
+        class="img-responsive img-avatar
+        img-fluid img-profile rounded-circle mx-auto mb-3"
+        src="../../../assets/images/boy.png"
+        alt=""
+      />
+      <div class="center">
+        <h5 class="h5 ">TASKS</h5>
+        <h5 class="h5">LOGOUT</h5>
+      </div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="main-overview">
+      <div class="overviewcard input100">
+        <div class="overviewcard__icon">Overview</div>
+        <div class="overviewcard__info">Card</div>
+        <form>
+          <input type="text" class="form-control" placeholder="email" />
+        </form>
+      </div>
+      <div class="overviewcard">
+        <div class="overviewcard__icon">Overview</div>
+        <div class="overviewcard__info">Card</div>
+      </div>
+      <div class="overviewcard">
+        <div class="overviewcard__icon">Overview</div>
+        <div class="overviewcard__info">Card</div>
+      </div>
+      <div class="overviewcard">
+        <div class="overviewcard__icon">Overview</div>
+        <div class="overviewcard__info">Card</div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
 </div>
