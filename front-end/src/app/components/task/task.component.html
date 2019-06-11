@@ -88,9 +88,11 @@
   </nav>
 </div> -->
 <div class="grid-container">
+  <header class="header-fullscreen"></header>
   <header class="header">
     <h6>TASK APP</h6>
     <div class="box">
+      <h6 class="header-logout">Create</h6>
       <h6 class="header-logout">Logout</h6>
       <img
         class="header-img rounded-circle"
@@ -111,19 +113,54 @@
       />
       <div class="center">
         <h5 class="h5 ">TASKS</h5>
+        <h5 [routerLink]="['/task/create']" class="h5 ">CREATE</h5>
         <h5 class="h5">LOGOUT</h5>
       </div>
     </div>
   </aside>
   <main class="main">
     <div class="main-overview">
-      <div class="overviewcard input100">
-        <div class="overviewcard__icon">Overview</div>
-        <div class="overviewcard__info">Card</div>
-        <form>
-          <input type="text" class="form-control" placeholder="email" />
-        </form>
+      <div *ngFor="let name of length" class="overviewcard ">
+        <div class="item item-0">
+          <!-- <h6 class="item-0_notes ">Edit</h6> -->
+          <img [routerLink]="['/task/5']" src="../../../assets/images/content.png" alt="" />
+
+          <!-- <li class="tg-list-item">
+            <input class="tgl tgl-ios" id="cb2" type="checkbox" />
+            <label class="tgl-btn" for="cb2"></label>
+          </li> -->
+        </div>
+        <div class="item item-1">
+          <small class="ml-1 text-voilet">Title</small>
+          <input
+            type="text"
+            class="form-control text-center mb-3"
+            disabled
+            value="Testing"
+          />
+          <small class="ml-1 text-voilet">Description</small>
+          <textarea
+            style="height: 100px; margin-top: 0px;"
+            type="text"
+            class="form-control"
+            disabled
+          >
+Lorem ipsum dolor sit amet consectetur a</textarea
+          >
+
+          <!-- <p class="item-box">Gaming</p> -->
+        </div>
+        <div class="item item-2">
+          <img
+            class="item-2_border"
+            src="../../../assets/images/bin.png"
+            alt=""
+          />
+        </div>
+        <!-- <input type="text" class="form-control" placeholder="Title" /> -->
+        <!-- <img style="align-items: center;" src="../../../assets/images/boy.png" alt=""> -->
       </div>
+      <!-- <div class="overviewcard"></div>
       <div class="overviewcard">
         <div class="overviewcard__icon">Overview</div>
         <div class="overviewcard__info">Card</div>
@@ -131,11 +168,7 @@
       <div class="overviewcard">
         <div class="overviewcard__icon">Overview</div>
         <div class="overviewcard__info">Card</div>
-      </div>
-      <div class="overviewcard">
-        <div class="overviewcard__icon">Overview</div>
-        <div class="overviewcard__info">Card</div>
-      </div>
+      </div> -->
     </div>
   </main>
   <footer class="footer"></footer>
