@@ -1,45 +1,4 @@
-<!-- <body>
-  <div class="main-w3layouts wrapper">
-    <h1>Login</h1>
-    <div class="main-agileinfo">
-      <div class="error" *ngIf="errors">{{ errors.Error }}</div>
-      <div class="agileits-top">
-        <form #form="ngForm" (ngSubmit)="submit(form)">
-          <input
-            class="text email"
-            ngModel
-            #email="ngModel"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required=""
-          />
-          <input
-            class="text"
-            type="password"
-            name="password"
-            ngModel
-            #password="ngModel"
-            placeholder="Password"
-            required=""
-          />
 
-          <div class="wthree-text m-1">
-            <label class="anim">
-              <span>Forget Password ?</span>
-            </label>
-            <div class="clear"></div>
-          </div>
-          <input [disabled]="!form.valid" type="submit" value="LOGIN" />
-        </form>
-        <p>
-          Don't have an Account?
-          <a [routerLink]="['/register']"> Register Now</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</body> -->
 <div class="grid">
   <div class="left">
     <div class="padding">
@@ -47,24 +6,46 @@
         <h2>Sign In</h2>
         <p>Welcome Back</p>
       </div>
-      <form>
+      <form #form="ngForm" (ngSubmit)="logingIn(form)">
         <input
           class="form-control placehold shadow"
           type="text"
           placeholder="Email"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="credentials.email"
+          required
         />
+        <div *ngIf="email.touched && !email.valid">
+          <div
+            *ngIf="email.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           class="form-control placehold shadow"
           type="password"
           placeholder="password"
+          name="password"
+          #password="ngModel"
+          [(ngModel)]="credentials.password"
+          required
         />
+        <div *ngIf="password.touched && !password.valid">
+          <div
+            *ngIf="password.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           type="submit"
           placeholder="Sign In"
           class="btn btn-block btn-primary"
         />
         <div>
-          <p [routerLink]="['/register']" class="float-left item">Or Create Account</p>
+          <p [routerLink]="['/register']" class="float-left item">
+            Or Register
+          </p>
           <p class="float-right item">Forget Password?</p>
         </div>
       </form>

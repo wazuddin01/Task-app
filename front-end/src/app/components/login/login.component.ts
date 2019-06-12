@@ -7,13 +7,17 @@ import { AuthService } from "src/app/services/auth.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
+  credentials = {
+    email: "",
+    password: ""
+  };
   errors;
   constructor(private auth: AuthService) {}
 
   ngOnInit() {}
-  submit(form) {
-    console.log(form.value);
-    this.auth.login(form.value).subscribe(
+  logingIn(credentials) {
+    console.log();
+    this.auth.login(this.credentials).subscribe(
       succ => {
         console.log(succ);
       },

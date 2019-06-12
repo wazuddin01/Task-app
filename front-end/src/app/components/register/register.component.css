@@ -83,14 +83,24 @@ p {
   background-color: #0747a6;
 }
 .padding {
-  margin-top: 8em;
+  margin-top: 7em;
   margin-left: 3em;
   margin-right: 1.5em;
 }
 input {
   border-radius: 20px;
-  margin-bottom: 18px;
+  margin-top: 18px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+input[type="submit"] {
+  margin-bottom: 18px;
+}
+.err-message {
+  font-size: 12px;
+  margin-left: 10px;
+}
+small {
+  font-weight: 200;
 }
 .placehold {
   font-weight: 100;
@@ -121,18 +131,7 @@ input {
   cursor: pointer;
   color: purple;
 }
-.under {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-}
-.over {
-  position: absolute;
-  left: 40px;
-  top: 10px;
-  z-index: -1;
-}
+
 @media (max-width: 670px) {
   .grid {
     grid-template-columns: 1fr;

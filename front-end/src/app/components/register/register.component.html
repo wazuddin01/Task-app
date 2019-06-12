@@ -5,27 +5,67 @@
         <h2>Register</h2>
         <p>Create new Account</p>
       </div>
-      <form>
+      <form #form="ngForm" (ngSubmit)="registerUser(form)">
         <input
           class="form-control placehold shadow"
           type="text"
           placeholder="Email"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="credentials.email"
+          required
         />
+        <div *ngIf="email.touched && !email.valid">
+          <div
+            *ngIf="email.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           class="form-control placehold shadow"
           type="text"
           placeholder="First Name"
+          name="firstName"
+          #firstName="ngModel"
+          [(ngModel)]="credentials.firstName"
+          required
         />
+        <div *ngIf="firstName.touched && !firstName.valid">
+          <div
+            *ngIf="firstName.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           class="form-control placehold shadow"
           type="text"
           placeholder="Last Name"
+          name="lastName"
+          #lastName="ngModel"
+          [(ngModel)]="credentials.lastName"
+          required
         />
+        <div *ngIf="lastName.touched && !lastName.valid">
+          <div
+            *ngIf="lastName.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           class="form-control placehold shadow"
           type="password"
           placeholder="password"
+          name="password"
+          #password="ngModel"
+          [(ngModel)]="credentials.password"
+          required
         />
+        <div *ngIf="password.touched && !password.valid">
+          <div
+            *ngIf="password.errors.required"
+            class="text-danger err-message"
+          ></div>
+        </div>
         <input
           type="submit"
           placeholder="Sign In"
