@@ -1,98 +1,9 @@
-<!-- <div id="page-top">
-  <nav
-    class="navbar navbar-expand-lg navbar-dark bg-success fixed-top"
-    id="sideNav"
-    style=" box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);"
-  >
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Manage Tasks</span>
-      <span class="d-none d-lg-block">
-        <img
-          class="img-fluid img-profile rounded-circle mx-auto mb-2"
-          src="../../../assets/images/boy.png"
-          alt=""
-        />
-      </span>
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">Tasks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-</div> -->
-<!--****** USING CSS GRID ******-->
-
-<!-- <div class="grid">
-  <div class="side-nav">
-    <div class="m-top">
-      <img
-        class="img-responsive img-avatar
-        img-fluid img-profile rounded-circle mx-auto mb-3"
-        src="../../../assets/images/boy.png"
-        alt=""
-      />
-      <div class="center">
-        <h5 class="h5 ">TASKS</h5>
-        <h5 class="h5">LOGOUT</h5>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar up-nav navbar-expand-md nav">
-    <a [routerLink]="['/task']" class="navbar-brand">Task App</a>
-    <button
-      style="background-color: whitesmoke;"
-      class="navbar-toggler"
-      data-toggle="collapse"
-      data-target="#navBarMenu"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <img
-      class="navbar-toggler img-toggle"
-      data-toggle="collapse"
-      data-target="#navBarMenu"
-      src="../../../assets/images/icons8-pull-down-48.png"
-      alt=""
-    />
-
-    <div class="collapse navbar-collapse" id="navBarMenu">
-      <ul class="navbar-nav mr-auto">
-        <li [routerLink]="['/task']" class="nav-item">
-          <a class="nav-link">Tasks</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a (click)="logout()" class="nav-link">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div> -->
 <div class="grid-container">
   <header class="header-fullscreen"></header>
   <header class="header">
-    <h6>TASK APP</h6>
+    <h6 [routerLink]="['/task/all']" >TASK APP</h6>
     <div class="box">
-      <h6 class="header-logout">Create</h6>
+      <h6 [routerLink]="['/task/create']" class="header-logout">Create</h6>
       <h6 class="header-logout">Logout</h6>
       <img
         class="header-img rounded-circle"
@@ -100,8 +11,6 @@
         alt=""
       />
     </div>
-    <!-- <p style="text-align: right;">TASK APP</p> -->
-    <!-- <p>TASK APP</p> -->
   </header>
   <aside class="side-nav">
     <div class="m-top">
@@ -112,7 +21,7 @@
         alt=""
       />
       <div class="center">
-        <h5 class="h5 ">TASKS</h5>
+        <h5 [routerLink]="['/task/all']" class="h5 ">TASKS</h5>
         <h5 [routerLink]="['/task/create']" class="h5 ">CREATE</h5>
         <h5 class="h5">LOGOUT</h5>
       </div>
@@ -123,7 +32,11 @@
       <div *ngFor="let name of length" class="overviewcard ">
         <div class="item item-0">
           <!-- <h6 class="item-0_notes ">Edit</h6> -->
-          <img [routerLink]="['/task/5']" src="../../../assets/images/content.png" alt="" />
+          <img
+            [routerLink]="['/task/5']"
+            src="../../../assets/images/content.png"
+            alt=""
+          />
 
           <!-- <li class="tg-list-item">
             <input class="tgl tgl-ios" id="cb2" type="checkbox" />

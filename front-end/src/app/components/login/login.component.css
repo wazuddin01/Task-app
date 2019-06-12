@@ -949,7 +949,7 @@ input {
 }
 .placehold {
   font-weight: 100;
-  font-size: 13px;
+  font-size: 14px;
   padding-left: 12px;
   color: grey;
 }
@@ -957,13 +957,13 @@ input {
   font-weight: 100;
   font-size: 13px;
 }
-.right-item {
-  /* font-weight: 300; */
+.item {
+  font-weight: 500;
   font-size: 15px;
-  text-align: right;
   color: #253992;
 }
-.right-item:hover {
+.item:hover {
+  outline: none;
   cursor: pointer;
   color: purple;
 }
