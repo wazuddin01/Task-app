@@ -13,7 +13,7 @@ module.exports = async (firstName, token, email) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: "taskappforeverybody@gmail.com", // generated ethereal user
-      pass: "Wazu.ruhail@1998" // generated ethereal password
+      pass: "" // generated ethereal password
     }
     // tls: {
     //   rejectUnauthorized: false
