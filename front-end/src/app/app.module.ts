@@ -7,11 +7,12 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { AuthService } from './services/auth.service';
-import { CreateTaskComponent } from './components/create-task/create-task.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+// import { CreateTaskComponent } from './components/create-task/create-task.component';
+// import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+// import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, ForgotPasswordComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -62,3 +62,18 @@
 input.ng-invalid.ng-touched {
   border: 0.09em solid red;
 }
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Roboto", sans-serif;
+}
+.err-message {
+  margin-left: 14px;
+  font-weight: 600;
+  font-size: 12px;
+}

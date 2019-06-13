@@ -852,7 +852,7 @@ input.checkbox:checked:after {
     font-size: 0.85em;
   }
 } */
-
+/* 
 @font-face {
   font-family: "Roboto";
   src: url("../../../assets/fonts/Roboto-Light.eot");
@@ -900,11 +900,11 @@ input.checkbox:checked:after {
     url("../../../assets/fonts/Roboto-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
-}
+} */
 body,
 h1,
 h2 {
-  font-family: "Roboto", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
   color: #253992;
   font-weight: 100;
   font-size: 2.8em;
@@ -944,7 +944,7 @@ p {
 }
 input {
   border-radius: 20px;
-  margin-bottom: 18px;
+  margin-top: 18px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 .placehold {
@@ -967,18 +967,7 @@ input {
   cursor: pointer;
   color: purple;
 }
-.under {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  z-index: -1;
-}
-.over {
-  position: absolute;
-  left: 40px;
-  top: 10px;
-  z-index: -1;
-}
+
 @media (max-width: 670px) {
   .grid {
     grid-template-columns: 1fr;

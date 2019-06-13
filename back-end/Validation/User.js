@@ -31,7 +31,6 @@ module.exports = data => {
   if (validator.isEmpty(data.lastName)) {
     errors.lastName = "Last Name cannot be empty";
   }
-
   return {
     errors,
     isValid: isEmpty(errors)

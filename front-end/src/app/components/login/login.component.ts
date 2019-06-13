@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/services/auth.service";
-
+// import { Clear } from "../../../assets/functions/clear";
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -11,20 +11,28 @@ export class LoginComponent implements OnInit {
     email: "",
     password: ""
   };
-  errors;
+  error = {
+    email: "",
+    password: ""
+  };
   constructor(private auth: AuthService) {}
-
   ngOnInit() {}
-  logingIn(credentials) {
+  logingIn() {
     console.log();
     this.auth.login(this.credentials).subscribe(
       succ => {
-        console.log(succ);
+        this.auth.clearCredentials(this.credentials);
       },
       err => {
-        this.errors = err.error;
-        console.log(this.errors);
+        this.error = err.error;
+        this.auth.clearCredentials(this.credentials);
       }
     );
+  }
+  clearCredentials(cred) {
+    cred.email = "";
+    cred.firstName = "";
+    cred.lastName = "";
+    cred.password = "";
   }
 }

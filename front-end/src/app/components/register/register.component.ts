@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "../../services/auth.service";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
@@ -12,28 +13,27 @@ export class RegisterComponent implements OnInit {
     lastName: "",
     password: ""
   };
-  constructor(private auth: AuthService) {}
+  error = {
+    email: "",
+    firstName: "",
+    lastName: "",
+    password: ""
+  };
+  constructor(private auth: AuthService, private route: Router) {}
 
   ngOnInit() {}
 
-  registerUser(credentials) {
-    // console.log("Email", this.credentials);
-    // console.log(form.value);
+  registerUser() {
     this.auth.signup(this.credentials).subscribe(
       succ => {
-        console.log(succ);
-        this.clearCredentials(this.credentials);
+        this.route.navigate(["/email"]);
+        this.auth.clearCredentials(this.credentials);
       },
       err => {
         console.log(err.error);
-        this.clearCredentials(this.credentials);
+        this.error = err.error;
+        // this.auth.clearCredentials(this.credentials);
       }
     );
-  }
-  clearCredentials(cred) {
-    cred.email = "";
-    cred.firstName = "";
-    cred.lastName = "";
-    cred.password = "";
   }
 }

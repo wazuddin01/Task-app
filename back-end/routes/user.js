@@ -3,17 +3,18 @@ const router = express.Router();
 const bycrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const userRegistration = require("../Validation/User");
+const registerValidation = require("../Validation/User");
+const loginValidation = require("../Validation/login");
 const createToken = require("../Authentication/jwt");
 
 const User = require("../Models/User");
 const secret = require("../config/keys").secret;
-
+const sendEmail = require("../Authentication/sendemail");
 //@route POST user/signup
 //@desc Create User
 //@access public
 router.post("/signup", async (req, res) => {
-  const { errors, isValid } = userRegistration(req.body);
+  const { errors, isValid } = registerValidation(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -30,24 +31,30 @@ router.post("/signup", async (req, res) => {
     }).save();
     const token = await createToken(savedUser._id);
     //Send Verification Link to verify account
-
-    //If user successfully saved
-    return res.status(201).json({
-      status: 1,
-      message: "OK",
-      data: { token }
-    });
-  } catch (e) {
-    //If email already exists
-    if (e.code == 11000) {
-      return res.status(400).json({
-        status: 0,
-        data: {},
-        Error: { message: "Email already exists" }
+    sendEmail(firstName, token, email)
+      .then(() => {
+        return res.status(201).json({
+          status: 1,
+          message: "OK",
+          data: { token }
+        });
+      })
+      .catch(err => {
+        throw new Error(err);
       });
-    }
+    //If user successfully saved
+  } catch (e) {
+    console.log(e);
+    //If email already exists
+    // if (e.code == 11000) {
+    //   return res.status(400).json({
+    //     status: 0,
+    //     data: {},
+    //     Error: { message: "Email already exists" }
+    //   });
+    // }
     //Else return error
-    return res.status(400).send(e);
+    return res.status(400).send(e.errmsg);
   }
 });
 
@@ -55,11 +62,15 @@ router.post("/signup", async (req, res) => {
 //@desc Loginng user
 //@access public
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+  const { errors, isValid } = loginValidation(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
   try {
+    const { email, password } = req.body;
     const user = await User.findOne({ email });
     const ismatched = await bycrypt.compare(password, user.password); //Password does not match
-    if (!ismatched ) {
+    if (!ismatched) {
       throw new Error("Password incorrect");
     }
     //Checking user Email is Verified or not
