@@ -13,7 +13,7 @@ module.exports = async (firstName, token, email) => {
     secure: true, // true for 465, false for other ports
     auth: {
       user: "taskappforeverybody@gmail.com", // generated ethereal user
-      pass: "" // generated ethereal password
+      pass: "Wazu.ruhail@1998" // generated ethereal password
     }
     // tls: {
     //   rejectUnauthorized: false
@@ -28,7 +28,7 @@ module.exports = async (firstName, token, email) => {
     text: "Hello world?", // plain text body
     html: output // html body
   });
-  console.log("Message sent: %s", info.messageId);
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
- 
+  // console.log("Message sent: %s", info.messageId);
+  // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // return res.status(201).json({ token, succ: "email has been sent" });
 };

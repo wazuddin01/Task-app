@@ -13,6 +13,7 @@ export class AuthService {
   signup(credentials) {
     return this.http.post(`${this.url}/signup`, credentials);
   }
+
   clearCredentials(cred) {
     cred.email = "";
     cred.password = "";

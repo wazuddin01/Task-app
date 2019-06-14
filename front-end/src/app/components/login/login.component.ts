@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AuthService } from "src/app/services/auth.service";
+import { Router } from "@angular/router";
+import { TokenService } from "src/app/services/token.service";
 // import { Clear } from "../../../assets/functions/clear";
 @Component({
   selector: "app-login",
@@ -15,24 +17,26 @@ export class LoginComponent implements OnInit {
     email: "",
     password: ""
   };
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private route: Router,
+    private token: TokenService
+  ) {}
   ngOnInit() {}
+  
   logingIn() {
-    console.log();
     this.auth.login(this.credentials).subscribe(
       succ => {
+        console.log(succ);
+        this.token.setToken(succ["data"].token);
+        this.token.getToken();
         this.auth.clearCredentials(this.credentials);
       },
       err => {
+        console.log(err.error);
         this.error = err.error;
-        this.auth.clearCredentials(this.credentials);
+        // this.auth.clearCredentials(this.credentials);
       }
     );
-  }
-  clearCredentials(cred) {
-    cred.email = "";
-    cred.firstName = "";
-    cred.lastName = "";
-    cred.password = "";
   }
 }

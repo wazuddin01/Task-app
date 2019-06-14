@@ -1,0 +1,86 @@
+body,
+h1,
+h2 {
+  /* font-family: "Roboto", sans-serif; */
+  color: #253992;
+  font-weight: 100;
+  font-size: 2.8em;
+}
+p {
+  font-weight: 100;
+  color: grey;
+  line-height: 1.8em;
+}
+.grid {
+  font-family: "Roboto";
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: repeat(12, 1fr);
+  height: 100%;
+}
+.left {
+  background-image: url("../../../assets/images/ath-gfx.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+}
+.right {
+  background-image: url("../../../assets/images/smartphone.png"),
+    url("../../../assets/images/ath-gfx.png");
+  background-repeat: no-repeat no-repeat;
+  background-position: center;
+  grid-column: 2/4;
+  grid-row: 1/-1;
+  background-color: #0747a6;
+}
+.padding {
+  margin-top: 10rem;
+  margin-left: 3em;
+  margin-right: 1.5em;
+}
+input {
+  border-radius: 20px;
+  margin-top: 18px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.placehold {
+  font-weight: 100;
+  font-size: 14px;
+  padding-left: 12px;
+  color: grey;
+}
+.btn-primary {
+  font-weight: 100;
+  font-size: 13px;
+}
+.item {
+  font-weight: 500;
+  font-size: 15px;
+  color: #253992;
+}
+.item:hover {
+  outline: none;
+  cursor: pointer;
+  color: purple;
+}
+
+@media (max-width: 670px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .right {
+    display: none;
+  }
+  .center {
+    text-align: center;
+  }
+  .padding {
+    margin-top: 8em;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .header {
+    margin-left: 4rem;
+  }
+}

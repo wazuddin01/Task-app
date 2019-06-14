@@ -10,6 +10,7 @@ const createToken = require("../Authentication/jwt");
 const User = require("../Models/User");
 const secret = require("../config/keys").secret;
 const sendEmail = require("../Authentication/sendemail");
+
 //@route POST user/signup
 //@desc Create User
 //@access public
@@ -29,31 +30,17 @@ router.post("/signup", async (req, res) => {
       firstName,
       lastName
     }).save();
-    const token = await createToken(savedUser._id);
+    const token = await createToken(savedUser._id, savedUser.isVerified);
     //Send Verification Link to verify account
-    sendEmail(firstName, token, email)
-      .then(() => {
-        return res.status(201).json({
-          status: 1,
-          message: "OK",
-          data: { token }
-        });
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
+    sendEmail(firstName, token, email);
+    return res.status(201).json({
+      status: 1,
+      message: "OK",
+      data: { token }
+    });
     //If user successfully saved
   } catch (e) {
     console.log(e);
-    //If email already exists
-    // if (e.code == 11000) {
-    //   return res.status(400).json({
-    //     status: 0,
-    //     data: {},
-    //     Error: { message: "Email already exists" }
-    //   });
-    // }
-    //Else return error
     return res.status(400).send(e.errmsg);
   }
 });
@@ -74,13 +61,13 @@ router.post("/login", async (req, res) => {
       throw new Error("Password incorrect");
     }
     //Checking user Email is Verified or not
-    if (!user.isVerified) {
-      throw new Error("Please verify your Email");
-    }
+    // if (!user.isVerified) {
+    //   throw new Error("Please verify your Email");
+    // }
     //Destructuring user
     const { isVerified, firstName, lastName } = user;
     // creating token to send from server
-    const token = await createToken(user._id);
+    const token = await createToken(user._id, user.isVerified);
     return res.status(200).send({
       status: 1,
       data: { email, isVerified, firstName, lastName, token },

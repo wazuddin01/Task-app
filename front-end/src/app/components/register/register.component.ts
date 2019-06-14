@@ -26,7 +26,8 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     this.auth.signup(this.credentials).subscribe(
       succ => {
-        this.route.navigate(["/email"]);
+        console.log(succ);
+        this.route.navigate(["/verify"]);
         this.auth.clearCredentials(this.credentials);
       },
       err => {
