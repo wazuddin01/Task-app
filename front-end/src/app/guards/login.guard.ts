@@ -9,22 +9,16 @@ import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { TokenService } from "../services/token.service";
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
   constructor(private token: TokenService, private routes: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.token.decodedToken().isExpired && !this.token.getToken()) {
-      if (!this.token.decodedToken().isVerified) {
-        this.routes.navigate(["/verify"]);
-        return false;
-      } else {
-        this.routes.navigate(["/login"]);
-        return false;
-      }
-    } else {
-      return true;
+    if (this.token.getToken() && this.token.decodedToken().isVerified == true) {
+      this.routes.navigate(["/task/all"]);
+      return false;
     }
+    return true;
   }
 }

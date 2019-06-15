@@ -23,13 +23,13 @@ export class LoginComponent implements OnInit {
     private token: TokenService
   ) {}
   ngOnInit() {}
-  
+
   logingIn() {
     this.auth.login(this.credentials).subscribe(
       succ => {
         console.log(succ);
         this.token.setToken(succ["data"].token);
-        this.token.getToken();
+        this.route.navigate(["/task/all"]);
         this.auth.clearCredentials(this.credentials);
       },
       err => {

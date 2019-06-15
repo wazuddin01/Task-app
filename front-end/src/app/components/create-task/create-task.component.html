@@ -4,7 +4,7 @@
     <h6 [routerLink]="['/task/all']">TASK APP</h6>
     <div class="box">
       <h6 [routerLink]="['/task/create']" class="header-logout">Create</h6>
-      <h6 class="header-logout"><a (Click)="logout()">Logout</a></h6>
+      <h6 class="header-logout"><a (click)="logout()">Logout</a></h6>
       <img
         class="header-img rounded-circle"
         src="../../../assets/images/boy_16p.png"
@@ -23,7 +23,7 @@
       <div class="center">
         <h5 [routerLink]="['/task/all']" class="h5 ">TASKS</h5>
         <h5 [routerLink]="['/task/create']" class="h5 ">CREATE</h5>
-        <h5 class="h5">LOGOUT</h5>
+        <h5 class="h5"><a (click)="logout()">LOGOUT</a></h5>
       </div>
     </div>
   </aside>

@@ -10,7 +10,6 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 
 import { AuthService } from "./services/auth.service";
-import { TokenService } from "./services/token.service";
 import { TaskService } from "./services/task.service";
 // import { AuthGuard } from './guards/auth.guard';
 // import { CreateTaskComponent } from './components/create-task/create-task.component';
@@ -26,7 +25,7 @@ import { TaskService } from "./services/task.service";
     FormsModule,
     JwtModule
   ],
-  providers: [AuthService, TokenService, TaskService],
+  providers: [AuthService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

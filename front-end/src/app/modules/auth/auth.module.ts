@@ -4,9 +4,14 @@ import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 import { ForgotPasswordComponent } from "src/app/components/forgot-password/forgot-password.component";
 import { VerifyEmailComponent } from "src/app/components/verify-email/verify-email.component";
+// import { AuthGuard } from "src/app/guards/auth.guard";
+//import { VerifyEmailGuard } from "src/app/guards/verify-email.guard";
 
 const routes: Routes = [
-  { path: "forgot", component: ForgotPasswordComponent },
+  {
+    path: "forgot",
+    component: ForgotPasswordComponent
+  },
   { path: "verify", component: VerifyEmailComponent }
 ];
 
