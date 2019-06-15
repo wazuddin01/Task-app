@@ -20,6 +20,8 @@ export class TokenService {
     if (this.getToken()) {
       const isExpired = helper.isTokenExpired(this.getToken());
       const { isVerified } = helper.decodeToken(this.getToken());
+      console.log(helper.decodeToken(this.getToken()));
+      console.log("isVerified", isVerified);
       return { isExpired, isVerified };
     }
     // const { isVerified } = helper.decodeToken(this.getToken());

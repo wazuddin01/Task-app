@@ -15,7 +15,7 @@ export class LoginGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.token.getToken() && this.token.decodedToken().isVerified == true) {
+    if (this.token.getToken() && this.token.decodedToken().isVerified) {
       this.routes.navigate(["/task/all"]);
       return false;
     }

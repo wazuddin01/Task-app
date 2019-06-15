@@ -15,16 +15,15 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.token.decodedToken().isExpired && !this.token.getToken()) {
-      if (!this.token.decodedToken().isVerified) {
+    if (!this.token.decodedToken().isExpired && this.token.getToken()) {
+      if (this.token.decodedToken().isVerified == false) {
         this.routes.navigate(["/verify"]);
         return false;
-      } else {
-        this.routes.navigate(["/login"]);
-        return false;
       }
-    } else {
       return true;
+    } else {
+      this.routes.navigate(["/login"]);
+      return false;
     }
   }
 }

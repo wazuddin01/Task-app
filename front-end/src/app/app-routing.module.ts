@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   {
     path: "",
-    loadChildren: "./modules/auth/auth.module#AuthModule"
+    loadChildren: "./modules/auth/auth.module#AuthModule",canActivate:[LoginGuard]
   },
   {
     path: "task",
