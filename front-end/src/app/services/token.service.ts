@@ -4,34 +4,36 @@ import { Router } from "@angular/router";
 
 @Injectable()
 export class TokenService {
+  private helper = new JwtHelperService();
   constructor(private route: Router) {}
+
   setToken(token) {
     localStorage.setItem("token", token);
   }
   getToken() {
     return localStorage.getItem("token");
-    //     console.log("decodedToken", decodedToken);
-    //     console.log("expirationDate", expirationDate);
-    //     console.log("isExpired", isExpired);
   }
   decodedToken() {
-    const helper = new JwtHelperService();
     // let isVerified = true;
     if (this.getToken()) {
-      const isExpired = helper.isTokenExpired(this.getToken());
-      const { isVerified } = helper.decodeToken(this.getToken());
-      console.log(helper.decodeToken(this.getToken()));
-      console.log("isVerified", isVerified);
+      const isExpired = this.helper.isTokenExpired(this.getToken());
+      const { isVerified } = this.helper.decodeToken(this.getToken());
+      // console.log(this.helper.decodeToken(this.getToken()));
+      // console.log("isVerified", isVerified);
+      
       return { isExpired, isVerified };
     }
     // const { isVerified } = helper.decodeToken(this.getToken());
     // const expirationDate = helper.getTokenExpirationDate(this.getToken());
-
     // console.log("Date.now",new Date);
     // console.log("Date", expirationDate);
     // console.log("decodedToken", isVerified);
     // console.log("token", this.getToken());
     return { isExpired: true, isVerified: false };
+  }
+  getuserName() {
+    console.log(this.helper.decodeToken(this.getToken()));
+    //  return firstName;
   }
   deleteToken() {
     localStorage.removeItem("token");

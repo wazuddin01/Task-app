@@ -6,6 +6,7 @@ import { AuthGuard } from "./guards/auth.guard";
 import { TokenService } from "./services/token.service";
 //import { VerifyEmailGuard } from "./guards/verify-email.guard";
 import { LoginGuard } from "./guards/login.guard";
+import { VerifyGuard } from "./guards/verify.guard";
 // import { ForgotPasswordComponent } from "./components/forgot-password/forgot-password.component";
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   {
     path: "",
-    loadChildren: "./modules/auth/auth.module#AuthModule",canActivate:[LoginGuard]
+    loadChildren: "./modules/auth/auth.module#AuthModule",
+    canActivate: [LoginGuard]
   },
   {
     path: "task",

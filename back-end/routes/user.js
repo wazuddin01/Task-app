@@ -32,7 +32,7 @@ router.post("/signup", async (req, res) => {
     }).save();
     const token = await createToken(savedUser._id, savedUser.isVerified);
     //Send Verification Link to verify account
-    sendEmail(firstName, token, email);
+    sendEmail(firstName, token, email, false);
     return res.status(201).json({
       status: 1,
       message: "OK",
@@ -101,11 +101,42 @@ router.get("/verify/:token", async (req, res) => {
   }
 });
 
-//@route GET user/sendverification
-//@desc Send Verification to user email
+//@route POST user/forgot
+//@desc Send Reset Password Email to user
 //@access private
-router.post("/sendverification", async (req, res) => {
-  const token = req.header("Authorization").split(" ")[1];
+router.post("/forgot", async (req, res) => {
+  try {
+    const { email } = req.body;
+    let user = await User.findOne({ email });
+    if (!user) {
+      throw new Error("User Not Found");
+    }
+    const token = await jwt.sign({ _id: user._id }, secret, {
+      expiresIn: "1hr"
+    });
+    sendEmail(user.firstName, token, email, true);
+    return res
+      .status(200)
+      .json({ status: 0, data: { message: "Email has been sent" }, Error: {} });
+  } catch (e) {
+    console.log(e);
+    return res.status(404).json({ status: 0, data: {}, Error: e.message });
+  }
+});
+
+//@route GET user/forgot/:token
+//@desc Reset Password of user
+//@access private
+router.get("/forgot/:token", async (req, res) => {
+  const { token } = req.params;
+  console.log(token);
+  try {
+    const verify = await jwt.verify(token, secret);
+    console.log(verify);
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json(e.message);
+  }
 });
 
 module.exports = router;

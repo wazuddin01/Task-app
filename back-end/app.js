@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const chalk = require("chalk");
 const app = express();
 
 const options = require("./config/keys");
@@ -11,7 +12,8 @@ const taskRoute = require("./routes/task");
 const adminRoute = require("./routes/admin");
 
 const port = process.env.PORT || 3000;
-
+// console.log(chalk.inverse.red("not found"));
+// console.log(chalk.inverse.green('successfull'))
 mongoose.set("useFindAndModify", false);
 //connecting to the database
 mongoose
